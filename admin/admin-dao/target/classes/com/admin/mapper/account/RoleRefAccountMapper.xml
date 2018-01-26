@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.admin.mapper.account.RoleRefAccountMapper">
+  <resultMap id="base" type="com.admin.model.account.RoleRefAccount">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="role_id" jdbcType="BIGINT" property="roleId" />
+    <result column="account_id" jdbcType="BIGINT" property="accountId" />
+    <result column="is_delete" jdbcType="BIT" property="isDelete" />
+    <result column="sort_weight" jdbcType="BIGINT" property="sortWeight" />
+    <result column="status" jdbcType="BIGINT" property="status" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="modify_time" jdbcType="TIMESTAMP" property="modifyTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <resultMap id="baseRoles" type="com.admin.model.account.RoleRefAccount">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="role_id" jdbcType="BIGINT" property="roleId" />
+    <result column="account_id" jdbcType="BIGINT" property="accountId" />
+    <result column="is_delete" jdbcType="BIT" property="isDelete" />
+    <result column="sort_weight" jdbcType="BIGINT" property="sortWeight" />
+    <result column="status" jdbcType="BIGINT" property="status" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="modify_time" jdbcType="TIMESTAMP" property="modifyTime" />
+  </resultMap>
+  <sql id="pk">
+    id
+  </sql>
+  <sql id="fields">
+    id,role_id,account_id,is_delete,sort_weight,status,create_time,modify_time,update_time
+  </sql>
+  <sql id="fields_add_pre">
+    t.id,t.role_id,t.account_id,t.is_delete,t.sort_weight,t.status,t.create_time,t.modify_time,t.update_time
+  </sql>
+  <sql id="table">
+    admin_role_ref_account
+  </sql>
+  <sql id="table_add_alias">
+    admin_role_ref_account t
+  </sql>
+  <sql id="equalPk">
+    WHERE id = #{pk}
+  </sql>
+  <sql id="equalPkField">
+    WHERE id = #{id}
+  </sql>
+  <sql id="fieldsCondition">
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="roleId != null">
+        role_id,
+      </if>
+      <if test="accountId != null">
+        account_id,
+      </if>
+      <if test="isDelete != null">
+        is_delete,
+      </if>
+      <if test="sortWeight != null">
+        sort_weight,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="modifyTime != null">
+        modify_time,
+      </if>
+
+    </trim>
+  </sql>
+  <sql id="valuesCondition">
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id},
+      </if>
+      <if test="roleId != null">
+        #{roleId},
+      </if>
+      <if test="accountId != null">
+        #{accountId},
+      </if>
+      <if test="isDelete != null">
+        #{isDelete},
+      </if>
+      <if test="sortWeight != null">
+        #{sortWeight},
+      </if>
+      <if test="status != null">
+        #{status},
+      </if>
+      <if test="createTime != null">
+        #{createTime},
+      </if>
+      <if test="modifyTime != null">
+        #{modifyTime},
+      </if>
+    </trim>
+  </sql>
+  <sql id="equalCondition">
+    <where>
+      <if test="id != null">
+        id=#{id}
+      </if>
+      <if test="roleId != null">
+        AND role_id=#{roleId}
+      </if>
+      <if test="accountId != null">
+        AND account_id=#{accountId}
+      </if>
+      <if test="isDelete != null">
+        AND is_delete=#{isDelete}
+      </if>
+      <if test="sortWeight != null">
+        AND sort_weight=#{sortWeight}
+      </if>
+      <if test="status != null">
+        AND status=#{status}
+      </if>
+      <if test="createTime != null">
+        AND create_time=#{createTime}
+      </if>
+      <if test="modifyTime != null">
+        AND modify_time=#{modifyTime}
+      </if>
+      <if test="startDatee != null">
+        <![CDATA[
+      	       and unix_timestamp(create_time) >  unix_timestamp(#{startDatee,jdbcType=TIMESTAMP})
+      	       ]]>
+      </if>
+      <if test="endDatee != null">
+        <![CDATA[
+      	       and unix_timestamp(create_time) <  unix_timestamp(#{endDatee,jdbcType=TIMESTAMP})
+      	       ]]>
+      </if>
+    </where>
+  </sql>
+  <sql id="set">
+    <set>
+      <if test="roleId != null">
+        role_id=#{roleId},
+      </if>
+      <if test="accountId != null">
+        account_id=#{accountId},
+      </if>
+      <if test="isDelete != null">
+        is_delete=#{isDelete},
+      </if>
+      <if test="sortWeight != null">
+        sort_weight=#{sortWeight},
+      </if>
+      <if test="status != null">
+        status=#{status},
+      </if>
+      <if test="createTime != null">
+        create_time=#{createTime},
+      </if>
+      <if test="modifyTime != null">
+        modify_time=#{modifyTime},
+      </if>
+    </set>
+  </sql>
+  <select id="getById" resultMap="base">
+            SELECT
+        <include refid="fields"/>
+        FROM
+        <include refid="table"/>
+        <include refid="equalPk"/>
+  </select>
+  <select id="findOne" resultMap="base">
+            SELECT
+        <include refid="fields"/>
+        FROM
+        <include refid="table"/>
+        <include refid="equalCondition"/>
+  </select>
+  <select id="findList" resultMap="base">
+    SELECT
+        <include refid="fields"/>
+        FROM
+        <include refid="table"/>
+         <include refid="equalCondition"></include>
+    <if test="offset !=null  and limit !=null">
+        limit #{offset},#{limit}
+      </if>
+  </select>
+  <select id="findPage" resultMap="base">
+    SELECT
+        <include refid="fields"/>
+        FROM
+        <include refid="table"/>
+        <include refid="equalCondition"/>
+  </select>
+  <insert id="insert" keyColumn="id" keyProperty="id" useGeneratedKeys="true">
+    INSERT INTO
+        <include refid="table"/>
+        <include refid="fieldsCondition"/>
+        <include refid="valuesCondition"/>
+  </insert>
+  <update id="updateById">
+    UPDATE
+        <include refid="table"/>
+        <include refid="set"/>
+        <include refid="equalPkField"/>
+  </update>
+  <delete id="deleteById">
+    DELETE FROM
+        <include refid="table"/>
+        <include refid="equalPk"/>
+  </delete>
+  <delete id="delete">
+    DELETE FROM
+        <include refid="table"/>
+        <include refid="equalCondition"/>
+  </delete>
+  <!--###########################自定义代码区域#############################-->
+  <select id="findListCount" parameterType="map" resultType="Integer">
+    select count(1) from admin_account
+    <include refid="equalCondition"></include>
+  </select>
+
+  <select id="getChilds" parameterType="map" resultMap="baseRoles">
+    select * from admin_role_ref_account ra LEFT JOIN admin_account a on ra.account_id=a.id
+    left JOIN admin_roles r on r.id=ra.role_id
+   <where>
+     <if test="roleId != null">
+       ra.role_id=#{roleId}
+     </if>
+     <if test="accountId != null">
+       ra.account_id=#{accountId}
+     </if>
+   </where>
+  </select>
+</mapper>

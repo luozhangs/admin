@@ -1,0 +1,471 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.admin.mapper.account.ResourcesMapper">
+    <resultMap id="base" type="com.admin.model.account.Resources">
+        <id column="id" jdbcType="BIGINT" property="id" />
+        <result column="name" jdbcType="VARCHAR" property="name" />
+        <result column="pid" jdbcType="BIGINT" property="pid" />
+        <result column="layer" jdbcType="BIGINT" property="layer" />
+        <result column="type" jdbcType="BIGINT" property="type" />
+        <result column="res_url" jdbcType="VARCHAR" property="resUrl" />
+        <result column="btn_type" jdbcType="VARCHAR" property="btnType" />
+        <result column="icon" jdbcType="VARCHAR" property="icon" />
+        <result column="sort" jdbcType="BIGINT" property="sort" />
+        <result column="is_valid" jdbcType="BIGINT" property="isValid" />
+        <result column="descn" jdbcType="VARCHAR" property="descn" />
+        <result column="is_delete" jdbcType="BIT" property="isDelete" />
+        <result column="status" jdbcType="BIGINT" property="status" />
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+        <result column="modify_time" jdbcType="TIMESTAMP" property="modifyTime" />
+    </resultMap>
+    <resultMap id="ZNodes" type="com.admin.vm.znode.ZNodes"></resultMap>
+    <resultMap id="baseAndson" type="com.admin.model.account.Resources">
+        <id column="id" jdbcType="BIGINT" property="id" />
+        <result column="name" jdbcType="VARCHAR" property="name" />
+        <result column="pid" jdbcType="BIGINT" property="pid" />
+        <result column="layer" jdbcType="BIGINT" property="layer" />
+        <result column="type" jdbcType="BIGINT" property="type" />
+        <result column="res_url" jdbcType="VARCHAR" property="resUrl" />
+        <result column="btn_type" jdbcType="VARCHAR" property="btnType" />
+        <result column="icon" jdbcType="VARCHAR" property="icon" />
+        <result column="sort" jdbcType="BIGINT" property="sort" />
+        <result column="is_valid" jdbcType="BIGINT" property="isValid" />
+        <result column="descn" jdbcType="VARCHAR" property="descn" />
+        <result column="is_delete" jdbcType="BIT" property="isDelete" />
+        <result column="status" jdbcType="BIGINT" property="status" />
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+        <result column="modify_time" jdbcType="TIMESTAMP" property="modifyTime" />
+        <collection property="nodes" column="id" ofType="baseAndson" select="getSon"/>
+    </resultMap>
+    <sql id="pk">
+        id
+    </sql>
+    <sql id="fields">
+        id,name,pid,layer,type,res_url,btn_type,icon,sort,is_valid,descn,is_delete,status,create_time,modify_time
+    </sql>
+    <sql id="fields_add_pre">
+        t.id,t.name,t.pid,t.layer,t.type,t.res_url,t.btn_type,t.icon,t.sort,t.is_valid,t.descn,t.is_delete,t.status,t.create_time,t.modify_time
+    </sql>
+    <sql id="table">
+        admin_resources
+    </sql>
+    <sql id="table_add_alias">
+        admin_resources t
+    </sql>
+    <sql id="equalPk">
+        WHERE id = #{pk}
+    </sql>
+    <sql id="equalPkField">
+        WHERE id = #{id}
+    </sql>
+    <sql id="fieldsCondition">
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="name != null">
+                name,
+            </if>
+            <if test="pid != null">
+                pid,
+            </if>
+            <if test="layer != null">
+                layer,
+            </if>
+            <if test="type != null">
+                type,
+            </if>
+            <if test="resUrl != null">
+                res_url,
+            </if>
+            <if test="btnType != null">
+                btn_type,
+            </if>
+            <if test="icon != null">
+                icon,
+            </if>
+            <if test="sort != null">
+                sort,
+            </if>
+            <if test="isValid != null">
+                is_valid,
+            </if>
+            <if test="descn != null">
+                descn,
+            </if>
+            <if test="isDelete != null">
+                is_delete,
+            </if>
+            <if test="status != null">
+                status,
+            </if>
+            <if test="createTime != null">
+                create_time,
+            </if>
+            <if test="modifyTime != null">
+                modify_time,
+            </if>
+
+        </trim>
+    </sql>
+    <sql id="valuesCondition">
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id},
+            </if>
+            <if test="name != null">
+                #{name},
+            </if>
+            <if test="pid != null">
+                #{pid},
+            </if>
+            <if test="layer != null">
+                #{layer},
+            </if>
+            <if test="type != null">
+                #{type},
+            </if>
+            <if test="resUrl != null">
+                #{resUrl},
+            </if>
+            <if test="btnType != null">
+                #{btnType},
+            </if>
+            <if test="icon != null">
+                #{icon},
+            </if>
+            <if test="sort != null">
+                #{sort},
+            </if>
+            <if test="isValid != null">
+                #{isValid},
+            </if>
+            <if test="descn != null">
+                #{descn},
+            </if>
+            <if test="isDelete != null">
+                #{isDelete},
+            </if>
+            <if test="status != null">
+                #{status},
+            </if>
+            <if test="createTime != null">
+                #{createTime},
+            </if>
+            <if test="modifyTime != null">
+                #{modifyTime},
+            </if>
+        </trim>
+    </sql>
+    <sql id="equalCondition">
+        <where>
+            <if test="id != null">
+                id=#{id}
+            </if>
+            <if test="name != null">
+                AND `name`=#{name}
+            </if>
+            <if test="pid != null">
+                AND pid=#{pid}
+            </if>
+            <if test="layer != null">
+                AND layer=#{layer}
+            </if>
+            <if test="type != null">
+                AND type=#{type}
+            </if>
+            <if test="resUrl != null">
+                AND res_url=#{resUrl}
+            </if>
+            <if test="btnType != null">
+                AND btn_type=#{btnType}
+            </if>
+            <if test="icon != null">
+                AND icon=#{icon}
+            </if>
+            <if test="sort != null">
+                AND sort=#{sort}
+            </if>
+            <if test="isValid != null">
+                AND is_valid=#{isValid}
+            </if>
+            <if test="descn != null">
+                AND descn=#{descn}
+            </if>
+            <if test="isDelete != null">
+                AND is_delete=#{isDelete}
+            </if>
+            <if test="status != null">
+                AND status=#{status}
+            </if>
+            <if test="createTime != null">
+                AND create_time=#{createTime}
+            </if>
+            <if test="modifyTime != null">
+                AND modify_time=#{modifyTime}
+            </if>
+        </where>
+    </sql>
+    <sql id="set">
+        <set>
+            <if test="name != null">
+                name=#{name},
+            </if>
+            <if test="pid != null">
+                pid=#{pid},
+            </if>
+            <if test="layer != null">
+                layer=#{layer},
+            </if>
+            <if test="type != null">
+                type=#{type},
+            </if>
+            <if test="resUrl != null">
+                res_url=#{resUrl},
+            </if>
+            <if test="btnType != null">
+                btn_type=#{btnType},
+            </if>
+            <if test="icon != null">
+                icon=#{icon},
+            </if>
+            <if test="sort != null">
+                sort=#{sort},
+            </if>
+            <if test="isValid != null">
+                is_valid=#{isValid},
+            </if>
+            <if test="descn != null">
+                descn=#{descn},
+            </if>
+            <if test="isDelete != null">
+                is_delete=#{isDelete},
+            </if>
+            <if test="status != null">
+                status=#{status},
+            </if>
+            <if test="createTime != null">
+                create_time=#{createTime},
+            </if>
+            <if test="modifyTime != null">
+                modify_time=#{modifyTime},
+            </if>
+        </set>
+    </sql>
+    <select id="getById" resultMap="base">
+        SELECT
+        <include refid="fields"/>
+        FROM
+        <include refid="table"/>
+        <include refid="equalPk"/>
+    </select>
+    <select id="findOne" resultMap="base">
+        SELECT
+        <include refid="fields"/>
+        FROM
+        <include refid="table"/>
+        <include refid="equalCondition"/>
+    </select>
+    <select id="findList" resultMap="base">
+        SELECT
+        <include refid="fields"/>
+        FROM
+        <include refid="table"/>
+        <include refid="equalCondition"></include>
+        <if test="offset !=null  and limit !=null">
+            limit #{offset},#{limit}
+        </if>
+    </select>
+    <select id="findPage" resultMap="base">
+        SELECT
+        <include refid="fields"/>
+        FROM
+        <include refid="table"/>
+        <include refid="equalCondition"/>
+    </select>
+    <insert id="insert" keyColumn="id" keyProperty="id" useGeneratedKeys="true">
+        INSERT INTO
+        <include refid="table"/>
+        <include refid="fieldsCondition"/>
+        <include refid="valuesCondition"/>
+    </insert>
+    <update id="updateById">
+        UPDATE
+        <include refid="table"/>
+        <include refid="set"/>
+        <include refid="equalPkField"/>
+    </update>
+    <delete id="deleteById">
+        DELETE FROM
+        <include refid="table"/>
+        <include refid="equalPk"/>
+    </delete>
+    <delete id="delete">
+        DELETE FROM
+        <include refid="table"/>
+        <include refid="equalCondition"/>
+    </delete>
+    <!--###########################自定义代码区域#############################-->
+    <select id="findListCount" parameterType="map" resultType="Integer">
+        SELECT
+        count(1)
+        FROM
+        <include refid="table"/>
+        <include refid="equalCondition"></include>
+    </select>
+    <!-- 菜单树 -->
+    <select id="findMenu" resultMap="base" parameterType="map">
+        select res.* from admin_resources res where 1=1
+        <if test="accountId != 1">
+            and  res.id in
+            (select resources_id from admin_resource_ref_role rr
+            where rr.role_id=(select role_id from admin_account where id=#{accountId} and is_delete=0 AND is_valid=1
+            )
+            )
+        </if>
+
+        <!--  <if test="pid != null">AND  pid=#{pid}</if>-->
+        AND substring_index(res.res_url, '?', 1)= #{resUrl}
+        AND  res.is_valid=1 ORDER BY res.sort asc,res.id asc
+    </select>
+    <!-- 按钮列 -->
+    <select id="findBtn" resultMap="base" parameterType="java.util.Map">
+        select res.* from admin_resources res where 1=1
+        <if test="accountId != 1">
+            and res.id in
+            (select resources_id from admin_resource_ref_role rr
+            where rr.role_id=(select role_id from admin_account where id=#{accountId} and is_delete=0 AND is_valid=1
+            )
+            )
+        </if>
+
+        and res.type=#{type} AND res.is_valid=1 AND res.pid=#{menuId} ORDER BY res.sort asc,res.id asc
+    </select>
+    <!-- 资源列表只含菜单不含按钮 -->
+    <select id="listResources" resultMap="ZNodes">
+        select
+        t.id as id,
+        t. name as name,
+        t.pid as pId
+        from
+        admin_resources t
+        where
+        t.type = 1 or t.type=4
+        AND t.is_valid = 1
+        order by
+        t.sort,
+        t.id
+    </select>
+    <!-- 用户权限资源列表 -->
+    <select id="resAuthorized" resultMap="base" parameterType="java.util.Map">
+        select res.* from admin_resources res where 1=1
+         <if test="accountId != 1">
+         AND  res.id in
+        (select resources_id from admin_resource_ref_role rr
+            where rr.role_id=(select role_id from admin_account where id=#{accountId} and is_delete=0 AND is_valid=1)
+        )
+         </if>
+        and res.type=#{type} AND res.is_valid=1 AND res.pid=#{pid} ORDER BY  res.sort asc,res.id asc
+    </select>
+    <!-- 获取子资源数量 -->
+    <select id="childCount"  resultType="Integer" parameterType="Long" >
+        select
+        count(*)
+        from
+        admin_resources t
+        where
+        t.pid = #{resId}
+    </select>
+    <!-- 根据资源Id删除所有权限关系 -->
+    <delete id="delRoleAuthByResId" parameterType="Long">
+        delete
+        from
+        admin_resource_ref_role
+        where
+        resources_id = #{resourcesId}
+    </delete>
+
+    <!--  -->
+    <select id="childBatchCount"  resultType="Long">
+        select
+        count(*)
+        from
+        admin_resources t
+        where
+        t.pid in(
+        <foreach item="o" collection="list" open="" separator="," close="" >
+            #{o.id}
+        </foreach>
+        )
+    </select>
+    <!-- 事务删除资源（批量） -->
+    <delete id="deleteBatch" parameterType="java.util.List">
+        delete from
+        admin_resources
+        where
+        id in(
+        <foreach item="o" collection="list" open="" separator="," close="" >
+            #{o.id}
+        </foreach>
+        )
+    </delete>
+    <!-- 删除角色权限 -->
+    <delete id="delBatchRoleAuthByResId" parameterType="java.util.List">
+        delete
+        from
+        admin_resource_ref_role
+        where
+        resources_id in(
+        <foreach item="o" collection="list" open="" separator="," close="" >
+            #{o.id}
+        </foreach>
+        )
+    </delete>
+    <!-- 删除组织权限 -->
+    <delete id="delBatchOrgAuthByResId" parameterType="java.util.List">
+        delete
+        from
+        admin_resource_ref_role
+        where
+        resources_id in(
+        <foreach item="o" collection="list" open="" separator="," close="" >
+            #{o.id}
+        </foreach>
+        )
+    </delete>
+    <!-- 获取资源并包括子资源 -->
+    <select id="findAndson"  resultMap="baseAndson" >
+        select
+        t.*
+        from
+        admin_resources t
+        where
+        t.pid = 0
+        order by
+        t.sort,
+        t.id
+    </select>
+    <select id="getSon"  parameterType="Long" resultMap="baseAndson" >
+        select
+        jbr.*
+        from
+        admin_resources jbr
+        where
+        jbr.pid = #{id}
+        order by
+        jbr.sort,
+        jbr.id
+    </select>
+    <!-- 获取资源并包括子资源 -->
+    <update id="updateBatchLayer" parameterType="Map">
+        update
+        admin_resources
+        set layer = #{layer}
+        where
+        id in(
+        <foreach item="o" collection="list" open="" separator="," close="" >
+            #{o}
+        </foreach>
+        )
+    </update>
+</mapper>

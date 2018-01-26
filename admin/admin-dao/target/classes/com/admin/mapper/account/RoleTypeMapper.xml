@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.admin.mapper.account.RoleTypeMapper">
+  <resultMap id="base" type="com.admin.model.account.RoleType">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="pid" jdbcType="BIGINT" property="pid" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="descn" jdbcType="VARCHAR" property="descn" />
+    <result column="is_valid" jdbcType="BIT" property="isValid" />
+    <result column="is_delete" jdbcType="BIT" property="isDelete" />
+    <result column="status" jdbcType="BIGINT" property="status" />
+    <result column="sort" jdbcType="BIGINT" property="sort" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="modify_time" jdbcType="TIMESTAMP" property="modifyTime" />
+  </resultMap>
+  <resultMap id="zNodes" type="com.admin.vm.znode.ZNodes"></resultMap>
+  <sql id="pk">
+    id
+  </sql>
+  <sql id="fields">
+    id,pid,title,descn,is_valid,is_delete,status,sort,create_time,modify_time,update_time
+  </sql>
+  <sql id="fields_add_pre">
+    t.id,t.pid,t.title,t.descn,t.is_valid,t.is_delete,t.status,t.sort,t.create_time,t.modify_time,t.update_time
+  </sql>
+  <sql id="table">
+    admin_role_type
+  </sql>
+  <sql id="table_add_alias">
+    admin_role_type t
+  </sql>
+  <sql id="equalPk">
+    WHERE id = #{pk}
+  </sql>
+  <sql id="equalPkField">
+    WHERE id = #{id}
+  </sql>
+  <sql id="fieldsCondition">
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="pid != null">
+        pid,
+      </if>
+      <if test="title != null">
+        title,
+      </if>
+      <if test="descn != null">
+        descn,
+      </if>
+      <if test="isValid != null">
+        is_valid,
+      </if>
+      <if test="isDelete != null">
+        is_delete,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="sort != null">
+        sort,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="modifyTime != null">
+        modify_time,
+      </if>
+    </trim>
+  </sql>
+  <sql id="valuesCondition">
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id},
+      </if>
+      <if test="pid != null">
+        #{pid},
+      </if>
+      <if test="title != null">
+        #{title},
+      </if>
+      <if test="descn != null">
+        #{descn},
+      </if>
+      <if test="isValid != null">
+        #{isValid},
+      </if>
+      <if test="isDelete != null">
+        #{isDelete},
+      </if>
+      <if test="status != null">
+        #{status},
+      </if>
+      <if test="sort != null">
+        #{sort},
+      </if>
+      <if test="createTime != null">
+        #{createTime},
+      </if>
+      <if test="modifyTime != null">
+        #{modifyTime},
+      </if>
+    </trim>
+  </sql>
+  <sql id="equalCondition">
+    <where>
+      <if test="id != null">
+        id=#{id}
+      </if>
+      <if test="pid != null">
+        AND pid=#{pid}
+      </if>
+      <if test="title != null">
+        AND title=#{title}
+      </if>
+      <if test="descn != null">
+        AND descn=#{descn}
+      </if>
+      <if test="isValid != null">
+        AND is_valid=#{isValid}
+      </if>
+      <if test="isDelete != null">
+        AND is_delete=#{isDelete}
+      </if>
+      <if test="status != null">
+        AND status=#{status}
+      </if>
+      <if test="sort != null">
+        AND sort=#{sort}
+      </if>
+      <if test="createTime != null">
+        AND create_time=#{createTime}
+      </if>
+      <if test="modifyTime != null">
+        AND modify_time=#{modifyTime}
+      </if>
+      <if test="keyword != null and keyword != ''">
+        AND title like concat('%',#{keyword},'%')
+      </if>
+    </where>
+  </sql>
+  <sql id="set">
+    <set>
+      <if test="pid != null">
+        pid=#{pid},
+      </if>
+      <if test="title != null">
+        title=#{title},
+      </if>
+      <if test="descn != null">
+        descn=#{descn},
+      </if>
+      <if test="isValid != null">
+        is_valid=#{isValid},
+      </if>
+      <if test="isDelete != null">
+        is_delete=#{isDelete},
+      </if>
+      <if test="status != null">
+        status=#{status},
+      </if>
+      <if test="sort != null">
+        sort=#{sort},
+      </if>
+      <if test="createTime != null">
+        create_time=#{createTime},
+      </if>
+      <if test="modifyTime != null">
+        modify_time=#{modifyTime},
+      </if>
+    </set>
+  </sql>
+  <select id="getById" resultMap="base">
+            SELECT
+        <include refid="fields"/>
+        FROM
+        <include refid="table"/>
+        <include refid="equalPk"/>
+  </select>
+  <select id="findOne" resultMap="base">
+            SELECT
+        <include refid="fields"/>
+        FROM
+        <include refid="table"/>
+        <include refid="equalCondition"/>
+  </select>
+  <select id="findList" resultMap="base">
+    SELECT
+        <include refid="fields"/>
+        FROM
+        <include refid="table"/>
+        <include refid="equalCondition"/>
+  </select>
+  <select id="findPage" resultMap="base">
+    SELECT
+        <include refid="fields"/>
+        FROM
+        <include refid="table"/>
+        <include refid="equalCondition"/>
+  </select>
+  <insert id="insert" keyColumn="id" keyProperty="id" useGeneratedKeys="true">
+    INSERT INTO
+        <include refid="table"/>
+        <include refid="fieldsCondition"/>
+        <include refid="valuesCondition"/>
+  </insert>
+  <update id="updateById">
+    UPDATE
+        <include refid="table"/>
+        <include refid="set"/>
+        <include refid="equalPkField"/>
+  </update>
+  <delete id="deleteById">
+    DELETE FROM
+        <include refid="table"/>
+        <include refid="equalPk"/>
+  </delete>
+  <delete id="delete">
+    DELETE FROM
+        <include refid="table"/>
+        <include refid="equalCondition"/>
+  </delete>
+  <!--###########################自定义代码区域#############################-->
+  <select id="findListCount" parameterType="map" resultType="Integer">
+    select count(1) from
+    <include refid="table"/>
+    <include refid="equalCondition" />
+  </select>
+  <select id="findTree" resultMap="zNodes">
+    SELECT id AS id,
+            title AS name,
+            pid as pId,
+            descn as other
+    FROM
+    <include refid="table"/>
+    <where>
+      <if test="keyword != null and keyword != ''">
+        title like concat('%',#{keyword},'%')
+      </if>
+    </where>
+  </select>
+
+  <select id="findRoleTree" resultMap="zNodes">
+ select * from (select 	t.id AS id,
+			t.pid AS pId,
+			t.title AS NAME,
+			'true' AS isParent,
+			t.sort as sort
+    from admin_role_type t
+    UNION
+    select concat('r_',r.id) AS id,
+        r.pid AS pId,
+        r.title AS NAME,
+        'false' AS isParent,
+				r.sort as sort
+    from  admin_roles r )
+o order by o.pId ASC,o.sort asc
+  </select>
+</mapper>

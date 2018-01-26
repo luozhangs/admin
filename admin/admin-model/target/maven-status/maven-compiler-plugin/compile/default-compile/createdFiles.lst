@@ -1,0 +1,7 @@
+com\admin\model\account\ResourcesRole.class
+com\admin\model\account\RoleType.class
+com\admin\model\account\Roles.class
+com\admin\model\account\Account.class
+com\admin\model\account\RoleRefAccount.class
+com\admin\model\account\Dept.class
+com\admin\model\account\Resources.class

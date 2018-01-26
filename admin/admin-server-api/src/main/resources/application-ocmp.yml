@@ -1,0 +1,18 @@
+spring:
+#数据库连接信息
+  datasource:
+#主数据源，默认的
+#    url: jdbc:log4jdbc:mysql://182.92.237.158:3306/admin-test?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true
+#    username: mcloud
+#    password: mcloud
+    url: jdbc:log4jdbc:mysql://127.0.0.1:3306/ocmp_admin?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true
+    username: root
+    password: admin
+
+  
+eureka:
+  client:
+    service-url:
+      defaultZone: http://${eureka.host:localhost}:${eureka.port:8761}/eureka/
+
+        

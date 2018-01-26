@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.admin.mapper.account.AccountMapper">
+  <resultMap id="base" type="com.admin.model.account.Account">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="login_name" jdbcType="VARCHAR" property="loginName" />
+    <result column="real_name" jdbcType="VARCHAR" property="realName" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="salt" jdbcType="VARCHAR" property="salt" />
+    <result column="account_type" jdbcType="VARCHAR" property="accountType" />
+    <result column="descn" jdbcType="VARCHAR" property="descn" />
+    <result column="pic_url" jdbcType="VARCHAR" property="picUrl" />
+    <result column="skin" jdbcType="VARCHAR" property="skin" />
+    <result column="sex" jdbcType="BIT" property="sex" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="identity_card" jdbcType="VARCHAR" property="identityCard" />
+    <result column="sort" jdbcType="BIGINT" property="sort" />
+    <result column="status" jdbcType="BIGINT" property="status" />
+    <result column="is_valid" jdbcType="BIT" property="isValid" />
+    <result column="is_delete" jdbcType="BIT" property="isDelete" />
+    <result column="role_id" jdbcType="BIGINT" property="roleId" />
+    <result column="dept_id" jdbcType="BIGINT" property="deptId" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="modify_time" jdbcType="TIMESTAMP" property="modifyTime" />
+  </resultMap>
+  <resultMap id="baseList" type="com.admin.vm.account.AccountListVo"></resultMap>
+
+  <resultMap id="ZNodes" type="com.admin.vm.znode.ZNodes"></resultMap>
+  <sql id="pk">
+    id
+  </sql>
+  <sql id="fields">
+    id,login_name,real_name,password,salt,account_type,descn,pic_url,skin,sex,phone,email,identity_card,sort,status,is_valid,is_delete,role_id,dept_id,create_time,modify_time
+  </sql>
+  <sql id="fields_add_pre">
+    t.id,t.login_name,t.real_name,t.password,t.salt,t.account_type,t.descn,t.pic_url,t.skin,t.sex,t.phone,t.email,t.identity_card,t.sort,t.status,t.is_valid,t.is_delete,t.role_id,t.dept_id,t.create_time,t.modify_time
+  </sql>
+  <sql id="table">
+    admin_account
+  </sql>
+  <sql id="table_add_alias">
+    admin_account t
+  </sql>
+  <sql id="equalPk">
+    WHERE id = #{pk}
+  </sql>
+  <sql id="equalPkField">
+    WHERE id = #{id}
+  </sql>
+  <sql id="fieldsCondition">
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="loginName != null">
+        login_name,
+      </if>
+      <if test="realName != null">
+        real_name,
+      </if>
+      <if test="password != null">
+        password,
+      </if>
+      <if test="salt != null">
+        salt,
+      </if>
+      <if test="accountType != null">
+        account_type,
+      </if>
+      <if test="descn != null">
+        descn,
+      </if>
+      <if test="picUrl != null">
+        pic_url,
+      </if>
+      <if test="skin != null">
+        skin,
+      </if>
+      <if test="sex != null">
+        sex,
+      </if>
+      <if test="phone != null">
+        phone,
+      </if>
+      <if test="email != null">
+        email,
+      </if>
+      <if test="identityCard != null">
+        identity_card,
+      </if>
+      <if test="sort != null">
+        sort,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="isValid != null">
+        is_valid,
+      </if>
+      <if test="isDelete != null">
+        is_delete,
+      </if>
+      <if test="roleId != null">
+        role_id,
+      </if>
+      <if test="deptId != null">
+        dept_id,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="modifyTime != null">
+        modify_time,
+      </if>
+    </trim>
+  </sql>
+  <sql id="valuesCondition">
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id},
+      </if>
+      <if test="loginName != null">
+        #{loginName},
+      </if>
+      <if test="realName != null">
+        #{realName},
+      </if>
+      <if test="password != null">
+        #{password},
+      </if>
+      <if test="salt != null">
+        #{salt},
+      </if>
+      <if test="accountType != null">
+        #{accountType},
+      </if>
+      <if test="descn != null">
+        #{descn},
+      </if>
+      <if test="picUrl != null">
+        #{picUrl},
+      </if>
+      <if test="skin != null">
+        #{skin},
+      </if>
+      <if test="sex != null">
+        #{sex},
+      </if>
+      <if test="phone != null">
+        #{phone},
+      </if>
+      <if test="email != null">
+        #{email},
+      </if>
+      <if test="identityCard != null">
+        #{identityCard},
+      </if>
+      <if test="sort != null">
+        #{sort},
+      </if>
+      <if test="status != null">
+        #{status},
+      </if>
+      <if test="isValid != null">
+        #{isValid},
+      </if>
+      <if test="isDelete != null">
+        #{isDelete},
+      </if>
+      <if test="roleId != null">
+        #{roleId},
+      </if>
+      <if test="deptId != null">
+        #{deptId},
+      </if>
+      <if test="createTime != null">
+        #{createTime},
+      </if>
+      <if test="modifyTime != null">
+        #{modifyTime},
+      </if>
+    </trim>
+  </sql>
+  <sql id="equalCondition">
+    <where>
+      <if test="id != null">
+        id=#{id}
+      </if>
+      <if test="loginName != null">
+        and login_name=#{loginName}
+      </if>
+      <if test="realName != null">
+        and real_name=#{realName}
+      </if>
+      <if test="password != null">
+        and password=#{password}
+      </if>
+      <if test="salt != null">
+        and salt=#{salt}
+      </if>
+      <if test="accountType != null">
+        and account_type=#{accountType}
+      </if>
+      <if test="descn != null">
+        and descn=#{descn}
+      </if>
+      <if test="picUrl != null">
+        and pic_url=#{picUrl}
+      </if>
+      <if test="skin != null">
+        and skin=#{skin}
+      </if>
+      <if test="sex != null">
+        and sex=#{sex}
+      </if>
+      <if test="phone != null">
+        and phone=#{phone}
+      </if>
+      <if test="email != null">
+        and email=#{email}
+      </if>
+      <if test="identityCard != null">
+        and identity_card=#{identityCard}
+      </if>
+      <if test="sort != null">
+        and sort=#{sort}
+      </if>
+      <if test="status != null">
+        and status=#{status}
+      </if>
+      <if test="isValid != null">
+        and is_valid=#{isValid}
+      </if>
+
+      and is_delete= 0
+
+      <if test="roleId != null">
+        and role_id=#{roleId}
+      </if>
+      <if test="deptId != null">
+        and dept_id=#{deptId}
+      </if>
+      <if test="createTime != null">
+        and create_time=#{createTime}
+      </if>
+      <if test="modifyTime != null">
+        and modify_time=#{modifyTime}
+      </if>
+      <if test="keyword != null and keyword !=''">
+        and (login_name like concat('%',#{keyword},'%') or real_name like concat('%',#{keyword},'%'))
+      </if>
+    </where>
+  </sql>
+  <sql id="set">
+    <set>
+      <if test="loginName != null">
+        login_name=#{loginName},
+      </if>
+      <if test="realName != null">
+        real_name=#{realName},
+      </if>
+      <if test="password != null">
+        password=#{password},
+      </if>
+      <if test="salt != null">
+        salt=#{salt},
+      </if>
+      <if test="accountType != null">
+        account_type=#{accountType},
+      </if>
+      <if test="descn != null">
+        descn=#{descn},
+      </if>
+      <if test="picUrl != null">
+        pic_url=#{picUrl},
+      </if>
+      <if test="skin != null">
+        skin=#{skin},
+      </if>
+      <if test="sex != null">
+        sex=#{sex},
+      </if>
+      <if test="phone != null">
+        phone=#{phone},
+      </if>
+      <if test="email != null">
+        email=#{email},
+      </if>
+      <if test="identityCard != null">
+        identity_card=#{identityCard},
+      </if>
+      <if test="sort != null">
+        sort=#{sort},
+      </if>
+      <if test="status != null">
+        status=#{status},
+      </if>
+      <if test="isValid != null">
+        is_valid=#{isValid},
+      </if>
+      <if test="isDelete != null">
+        is_delete=#{isDelete},
+      </if>
+      <if test="roleId != null">
+        role_id=#{roleId},
+      </if>
+      <if test="deptId != null">
+        dept_id=#{deptId},
+      </if>
+      <if test="createTime != null">
+        create_time=#{createTime},
+      </if>
+      <if test="modifyTime != null">
+        modify_time=#{modifyTime},
+      </if>
+    </set>
+  </sql>
+  <select id="getById" resultMap="base">
+            select
+        <include refid="fields" />
+        from
+        <include refid="table" />
+        <include refid="equalPk" />
+  </select>
+  <select id="findOne" resultMap="base">
+            SELECT
+        <include refid="fields" />
+        FROM
+        <include refid="table" />
+        <include refid="equalCondition" />
+  </select>
+  <select id="findList" resultMap="baseList">
+    <!--SELECT
+        <include refid="fields" />
+        FROM
+        <include refid="table" />
+      <include refid="equalCondition"></include>-->
+    SELECT
+    id id,
+    login_name loginName,
+    real_name realName,
+    account_type accountType,
+    descn descn,
+    pic_url picUrl,
+    skin skin,
+    sex sex,
+    phone phone,
+    email email,
+    identity_card idCard,
+    sort sort,
+    STATUS STATUS,
+    is_valid isValid,
+    is_delete isDelete,
+    role_id roleId,
+    (
+    SELECT
+    title
+    FROM
+    admin_roles
+    WHERE
+    id = a.role_id
+    ) AS roleName,
+    (
+    SELECT
+    title
+    FROM
+    admin_dept
+    WHERE
+    id = a.dept_id
+    ) AS deptName,
+    dept_id deptId
+    FROM
+    admin_account a
+    <include refid="equalCondition" />
+    <if test="offset !=null  and limit !=null">
+      limit #{offset},#{limit}
+    </if>
+  </select>
+  <select id="list" resultMap="base">
+    SELECT
+        <include refid="fields" />
+        FROM
+        <include refid="table" />
+        <include refid="equalCondition" />
+  </select>
+  <insert id="insert" keyColumn="id" keyProperty="id" useGeneratedKeys="true">
+    INSERT INTO
+        <include refid="table" />
+        <include refid="fieldsCondition" />
+        <include refid="valuesCondition" />
+  </insert>
+  <update id="updateById">
+    UPDATE
+        <include refid="table" />
+        <include refid="set" />
+        <include refid="equalPkField" />
+  </update>
+  <delete id="deleteById">
+    DELETE FROM
+        <include refid="table" />
+        <include refid="equalPk" />
+  </delete>
+  <delete id="delete">
+    DELETE FROM
+        <include refid="table" />
+        <include refid="equalCondition" />
+  </delete>
+  <!--###########################自定义代码区域#############################-->
+  <select id="findListCount" parameterType="map" resultType="java.lang.Integer">
+    SELECT
+    count(1)
+    FROM
+    <include refid="table"/>
+    <include refid="equalCondition" />
+  </select>
+  <update id="deleteBatchAccount" parameterType="java.util.List">
+    UPDATE admin_account SET is_delete=1 WHERE ID IN (
+    <foreach item="o" collection="list" open="" separator=","
+             close="">
+      #{o.accountId}
+    </foreach>
+    )
+  </update>
+
+</mapper>

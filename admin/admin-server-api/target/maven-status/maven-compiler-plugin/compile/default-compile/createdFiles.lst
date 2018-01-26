@@ -1,0 +1,15 @@
+com\admin\controller\account\ResourcesController.class
+com\admin\controller\account\DeptController.class
+com\admin\controller\account\RoleRefAccountController.class
+com\admin\controller\account\RoleTypeController.class
+com\admin\controller\account\ResourcesRefRoleController.class
+com\admin\controller\account\RolesController.class
+com\admin\filter\StreamFilter.class
+com\admin\controller\account\AccountController.class
+com\admin\controller\base\BaseController.class
+com\admin\config\CorsConfig.class
+com\admin\wrapper\BodyReaderHttpServletRequestWrapper$1.class
+com\admin\AdminServerApiClientApplication.class
+com\admin\interceptor\AdminInterceptor.class
+com\admin\config\MyInterceptorConfig.class
+com\admin\wrapper\BodyReaderHttpServletRequestWrapper.class

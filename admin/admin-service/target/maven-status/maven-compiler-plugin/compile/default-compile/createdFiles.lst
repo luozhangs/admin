@@ -1,0 +1,15 @@
+com\admin\service\account\impl\ResourcesServiceImpl.class
+com\admin\service\account\impl\DeptServiceImpl.class
+com\admin\service\account\impl\RolesServiceImpl.class
+com\admin\service\App.class
+com\admin\service\account\RolesService.class
+com\admin\service\account\impl\ResourcesRefRoleServiceImpl.class
+com\admin\service\account\RoleRefAccountService.class
+com\admin\service\account\DeptService.class
+com\admin\service\account\impl\AccountServiceImpl.class
+com\admin\service\account\AccountService.class
+com\admin\service\account\impl\RoleTypeServiceImpl.class
+com\admin\service\account\ResourcesRefRoleService.class
+com\admin\service\account\impl\RoleRefAccountServiceImpl.class
+com\admin\service\account\ResourcesService.class
+com\admin\service\account\RoleTypeService.class

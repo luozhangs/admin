@@ -1,0 +1,67 @@
+server:
+ port: 9801
+ 
+ 
+spring:
+   profiles:
+     active: ocmp
+
+   application:
+     name: admin-server-api
+    
+     
+   #数据库连接信息
+   datasource:
+#主数据源，默认的
+    #type: com.alibaba.druid.pool.DruidDataSource
+    #com.mysql.jdbc.Driver
+    driverClassName: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+# 打开PSCache，并且指定每个连接上PSCache的大小
+    poolPreparedStatements: true
+    maxPoolPreparedStatementPerConnectionSize: 20
+# 配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙 stat,wall,log4j
+    filters: stat,log4j
+    tomcat:
+# 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+       timeBetweenEvictionRunsMillis: 65000
+# 配置一个连接在池中最小生存的时间，单位是毫秒
+       minEvictableIdleTimeMillis: 1800000
+#验证sql
+       validationQuery: SELECT 1 FROM DUAL
+#验证连接的有效性
+       testWhileIdle: true
+#获取连接时候验证，会影响性能
+       testOnBorrow: true
+       testOnReturn: false
+# 初始化大小数，最小空闲数，最大活动数
+       initialSize: 5
+#指定必须保持连接的最小值
+       minIdle: 5
+#指定连接池最大的空闲连接数量
+       maxIdle: 20
+#指定连接池中最大的活跃连接数
+       maxActive: 50
+# 配置获取连接等待超时的时间60秒
+       maxWait: 60000
+
+
+  
+  
+
+#mybatis
+mybatis:
+  #config-location: classpath:mybatis-config.xml
+  type-aliases-package: com.admin.model
+  mapper-locations: classpath*:/com/admin/mapper/**/*Mapper.xml
+     
+
+#eureka
+eureka:
+  instance:
+    non-secure-port: ${server.port:9801}
+
+hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 30000
+ribbon: 
+  eureka:
+    enabled: true
+  ConnectTimeout: 10000

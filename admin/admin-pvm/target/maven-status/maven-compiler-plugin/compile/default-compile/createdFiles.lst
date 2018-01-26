@@ -1,0 +1,15 @@
+com\admin\vm\account\AccountVo.class
+com\admin\pm\role\RolesAddForm.class
+com\admin\pm\account\AccountAddForm.class
+com\admin\pm\role\RolesUpdateForm.class
+com\admin\vm\account\AccountListVo.class
+com\admin\pm\dept\DeptUpdateForm.class
+com\admin\pm\role\type\RoleTypeAddForm.class
+com\admin\pm\resource\ButtonParam.class
+com\admin\pvm\App.class
+com\admin\pm\dept\DeptAddForm.class
+com\admin\pm\resource\ResourcesAddForm.class
+com\admin\vm\znode\ZNodes.class
+com\admin\pm\resource\ResourcesUpdateForm.class
+com\admin\pm\role\type\RoleTypeUpdateForm.class
+com\admin\pm\account\AccountUpdateForm.class

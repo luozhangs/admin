@@ -1,0 +1,8 @@
+com\admin\dao\account\DeptDao.class
+com\admin\dao\account\RolesDao.class
+com\admin\dao\App.class
+com\admin\dao\account\RoleRefAccountDao.class
+com\admin\dao\account\ResourcesDao.class
+com\admin\dao\account\RoleTypeDao.class
+com\admin\dao\account\AccountDao.class
+com\admin\dao\account\ResourcesRefRoleDao.class

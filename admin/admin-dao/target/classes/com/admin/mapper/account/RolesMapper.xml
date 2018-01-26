@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.admin.mapper.account.RolesMapper">
+  <resultMap id="base" type="com.admin.model.account.Roles">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="pid" jdbcType="BIGINT" property="pid" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="descn" jdbcType="VARCHAR" property="descn" />
+    <result column="is_valid" jdbcType="BIT" property="isValid" />
+    <result column="is_delete" jdbcType="BIT" property="isDelete" />
+    <result column="status" jdbcType="BIGINT" property="status" />
+    <result column="sort" jdbcType="BIGINT" property="sort" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="modify_time" jdbcType="TIMESTAMP" property="modifyTime" />
+  </resultMap>
+  <resultMap id="zNodes" type="com.admin.vm.znode.ZNodes"></resultMap>
+  <sql id="pk">
+    id
+  </sql>
+  <sql id="fields">
+    id,pid,title,descn,is_valid,is_delete,status,sort,create_time,modify_time,update_time
+  </sql>
+  <sql id="fields_add_pre">
+    t.id,t.pid,t.title,t.descn,t.is_valid,t.is_delete,t.status,t.sort,t.create_time,t.modify_time,t.update_time
+  </sql>
+  <sql id="table">
+    admin_roles
+  </sql>
+  <sql id="table_add_alias">
+    admin_roles t
+  </sql>
+  <sql id="equalPk">
+    WHERE id = #{pk}
+  </sql>
+  <sql id="equalPkField">
+    WHERE id = #{id}
+  </sql>
+  <sql id="fieldsCondition">
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="pid != null">
+        pid,
+      </if>
+      <if test="title != null">
+        title,
+      </if>
+      <if test="descn != null">
+        descn,
+      </if>
+      <if test="isValid != null">
+        is_valid,
+      </if>
+      <if test="isDelete != null">
+        is_delete,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="sort != null">
+        sort,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="modifyTime != null">
+        modify_time,
+      </if>
+    </trim>
+  </sql>
+  <sql id="valuesCondition">
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id},
+      </if>
+      <if test="pid != null">
+        #{pid},
+      </if>
+      <if test="title != null">
+        #{title},
+      </if>
+      <if test="descn != null">
+        #{descn},
+      </if>
+      <if test="isValid != null">
+        #{isValid},
+      </if>
+      <if test="isDelete != null">
+        #{isDelete},
+      </if>
+      <if test="status != null">
+        #{status},
+      </if>
+      <if test="sort != null">
+        #{sort},
+      </if>
+      <if test="createTime != null">
+        #{createTime},
+      </if>
+      <if test="modifyTime != null">
+        #{modifyTime},
+      </if>
+    </trim>
+  </sql>
+  <sql id="equalCondition">
+    <where>
+      <if test="id != null">
+        id=#{id}
+      </if>
+      <if test="pid != null">
+        AND pid=#{pid}
+      </if>
+      <if test="title != null">
+        AND title=#{title}
+      </if>
+      <if test="descn != null">
+        AND descn=#{descn}
+      </if>
+      <if test="isValid != null">
+        AND is_valid=#{isValid}
+      </if>
+      <if test="isDelete != null">
+        AND is_delete=#{isDelete}
+      </if>
+      <if test="status != null">
+        AND status=#{status}
+      </if>
+      <if test="sort != null">
+        AND sort=#{sort}
+      </if>
+      <if test="createTime != null">
+        AND create_time=#{createTime}
+      </if>
+      <if test="modifyTime != null">
+        AND modify_time=#{modifyTime}
+      </if>
+      <if test="keyWord != null and keyWord != ''">
+        AND title like concat('%',#{keyWord},'%')
+      </if>
+    </where>
+  </sql>
+  <sql id="set">
+    <set>
+      <if test="pid != null">
+        pid=#{pid},
+      </if>
+      <if test="title != null">
+        title=#{title},
+      </if>
+      <if test="descn != null">
+        descn=#{descn},
+      </if>
+      <if test="isValid != null">
+        is_valid=#{isValid},
+      </if>
+      <if test="isDelete != null">
+        is_delete=#{isDelete},
+      </if>
+      <if test="status != null">
+        status=#{status},
+      </if>
+      <if test="sort != null">
+        sort=#{sort},
+      </if>
+      <if test="createTime != null">
+        create_time=#{createTime},
+      </if>
+      <if test="modifyTime != null">
+        modify_time=#{modifyTime},
+      </if>
+    </set>
+  </sql>
+  <select id="getById" resultMap="base">
+            SELECT
+        <include refid="fields"/>
+        FROM
+        <include refid="table"/>
+        <include refid="equalPk"/>
+  </select>
+  <select id="findOne" resultMap="base">
+            SELECT
+        <include refid="fields"/>
+        FROM
+        <include refid="table"/>
+        <include refid="equalCondition"/>
+  </select>
+  <select id="findList" resultMap="base">
+    SELECT
+        <include refid="fields"/>
+        FROM
+        <include refid="table"/>
+    <include refid="equalCondition"></include>
+    ORDER BY pid,sort,id
+    <if test="offset !=null  and limit !=null">
+      limit #{offset},#{limit}
+    </if>
+  </select>
+  <select id="findPage" resultMap="base">
+    SELECT
+        <include refid="fields"/>
+        FROM
+        <include refid="table"/>
+        <include refid="equalCondition"/>
+  </select>
+  <insert id="insert" keyColumn="id" keyProperty="id" useGeneratedKeys="true">
+    INSERT INTO
+        <include refid="table"/>
+        <include refid="fieldsCondition"/>
+        <include refid="valuesCondition"/>
+  </insert>
+  <update id="updateById">
+    UPDATE
+        <include refid="table"/>
+        <include refid="set"/>
+        <include refid="equalPkField"/>
+  </update>
+  <delete id="deleteById">
+    DELETE FROM
+        <include refid="table"/>
+        <include refid="equalPk"/>
+  </delete>
+  <delete id="delete">
+    DELETE FROM
+        <include refid="table"/>
+        <include refid="equalCondition"/>
+  </delete>
+  <!--###########################自定义代码区域#############################-->
+  <select id="findListCount" parameterType="map" resultType="Integer">
+    select count(1) from
+    <include refid="table"/>
+    <include refid="equalCondition" />
+  </select>
+  <delete id="deleteBatch" parameterType="java.util.List">
+    DELETE FROM admin_roles
+    WHERE id in(
+    <foreach item="o" collection="list" open="" separator="," close="" >
+      #{o.id}
+    </foreach>
+    )
+  </delete>
+  <!-- 权限列表包含按钮 -->
+  <select id="listAuthorized" resultMap="zNodes" parameterType="map">
+    SELECT
+    jbre.id AS id,
+    jbre. NAME AS NAME,
+    jbre.pid AS pId,
+    (
+    CASE
+    WHEN jbor.role_id IS NOT NULL THEN
+    'true'
+    ELSE
+    ''
+    END
+    ) AS checked,
+    (
+    CASE
+    WHEN jbre.is_valid = 1
+    AND jbor.role_id IS NOT NULL THEN
+    'true'
+    ELSE
+    ''
+    END
+    ) AS OPEN,
+    (
+    CASE
+    WHEN jbre.is_valid != 1
+    <!--
+    OR jbor.th_org_Id IS NULL
+    -->
+    THEN
+    'true'
+    ELSE
+    ''
+    END
+    ) AS chkDisabled
+    FROM
+    admin_resources jbre
+    LEFT JOIN (
+    SELECT
+    thjbor.role_id AS th_org_Id,
+    thjbor.resources_id AS resources_id,
+    tjbrr.role_id AS role_Id
+    FROM
+    admin_resource_ref_role thjbor
+    LEFT JOIN (
+    SELECT
+    t.role_id,
+    t.resources_id
+    FROM
+    admin_resource_ref_role t
+    WHERE
+    t.role_id = #{roleId}) tjbrr
+    ON thjbor.resources_id = tjbrr.resources_id
+    WHERE
+    thjbor.role_id IN (
+    SELECT
+    t.id
+    FROM
+    admin_roles t
+    WHERE
+    t.id = #{roleId})) jbor
+    ON jbor.resources_id = jbre.id
+
+    ORDER BY
+    jbre.pid,
+    jbre.type,
+    jbre.sort
+  </select>
+  <delete id="delAuthorizedByRoleId" parameterType="Long">
+    DELETE from admin_resource_ref_role
+    WHERE role_id=#{roleId}
+  </delete>
+  <delete id="delAuthorizedByRoleIdAndLayer" parameterType="map">
+    DELETE from admin_resource_ref_role
+    WHERE role_id=#{roleId} AND EXISTS (SELECT jbr.id FROM admin_resources jbr
+    WHERE resources_id=jbr.id AND jbr.layer=#{layer})
+  </delete>
+  <delete id="deleteBatchAuthorizedByRoleId" parameterType="java.util.List">
+    DELETE from admin_resource_ref_role
+    WHERE role_id in(
+    <foreach item="o" collection="list" open="" separator="," close="" >
+      #{o.id}
+    </foreach>
+    )
+  </delete>
+  <insert id="insertAuthorizedByRoleId" parameterType="java.util.List">
+    INSERT INTO admin_resource_ref_role(role_id,resources_id)
+    VALUES
+    <foreach item="o" collection="list"  separator="," >
+      (#{o.roleId},#{o.resourcesId})
+    </foreach>
+  </insert>
+</mapper>

@@ -1,0 +1,14 @@
+D:\workspace\admin\admin-server-api\src\main\java\com\admin\controller\account\DeptController.java
+D:\workspace\admin\admin-server-api\src\main\java\com\admin\config\MyInterceptorConfig.java
+D:\workspace\admin\admin-server-api\src\main\java\com\admin\controller\base\BaseController.java
+D:\workspace\admin\admin-server-api\src\main\java\com\admin\controller\account\AccountController.java
+D:\workspace\admin\admin-server-api\src\main\java\com\admin\config\CorsConfig.java
+D:\workspace\admin\admin-server-api\src\main\java\com\admin\controller\account\RoleRefAccountController.java
+D:\workspace\admin\admin-server-api\src\main\java\com\admin\controller\account\ResourcesController.java
+D:\workspace\admin\admin-server-api\src\main\java\com\admin\controller\account\RolesController.java
+D:\workspace\admin\admin-server-api\src\main\java\com\admin\interceptor\AdminInterceptor.java
+D:\workspace\admin\admin-server-api\src\main\java\com\admin\wrapper\BodyReaderHttpServletRequestWrapper.java
+D:\workspace\admin\admin-server-api\src\main\java\com\admin\AdminServerApiClientApplication.java
+D:\workspace\admin\admin-server-api\src\main\java\com\admin\controller\account\RoleTypeController.java
+D:\workspace\admin\admin-server-api\src\main\java\com\admin\controller\account\ResourcesRefRoleController.java
+D:\workspace\admin\admin-server-api\src\main\java\com\admin\filter\StreamFilter.java
