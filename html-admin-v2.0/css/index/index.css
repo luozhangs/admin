@@ -1,0 +1,357 @@
+.layui-layout-admin .mxx-header {
+  height: 60px;
+  box-sizing: border-box;
+  background-image: linear-gradient(-180deg, #2A3C54 0%, #212943 100%);
+  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.10);
+}
+
+.layui-layout-admin .mxx-logo {
+  width: 239px;
+  line-height: 60px;
+  box-sizing: border-box;
+}
+
+.layui-layout-admin .mxx-logo a {
+  font-family: PingFangSC-Regular;
+  font-size: 16px;
+  color: rgba(255,255,255,0.72);
+  letter-spacing: 1.33px;
+}
+
+.layui-layout-admin .mxx-breadcrumb {
+  position: absolute;
+  left: 269px;
+  right: 208px;
+  top: 0;
+  bottom: 0;
+}
+
+.layui-layout-admin .mxx-right {
+  width: 154px;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding-right: 54px;
+}
+
+.layui-layout-admin .mxx-right span {
+  vertical-align: middle;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+.layui-layout-admin .mxx-signout {
+  width: 66px;
+  height: 28px;
+  background: rgba(255,255,255,0.20);
+  border-radius: 2px;
+  text-align: center;
+  line-height: 28px;
+  color: rgba(255,255,255,0.74);
+  font-size: 11px;
+}
+
+.layui-layout-admin .mxx-pic {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-left: 14px;
+  border: 2px solid #FFFFFF;
+}
+
+.layui-layout-admin .mxx-pic img {
+  width: 40px;
+  height: 40px;
+}
+
+.mxx-middle {
+  position: relative;
+}
+
+.mxx-middle .mxx-first-nav {
+  position: fixed;
+  top: 60px;
+  bottom: 0;
+  width: 60px;
+  left: 0;
+  background-color: #1C2237;
+  z-index: 102;
+}
+
+.mxx-middle .mxx-second-box {
+  width: 179px;
+  overflow: hidden;
+  position: fixed;
+  top: 60px;
+  bottom: 0;
+  left: 60px;
+  overflow-x: hidden;
+  z-index: 101;
+}
+
+.mxx-middle .mxx-second-nav {
+  width: 196px;
+  height: 100%;
+  overflow-y: auto;
+  background-color: #212943;
+  color: #ABB9C7;
+}
+
+.mxx-icon-nav>li>a {
+  display: inline-block;
+  width: 100%;
+  height: 80px;
+  background: url('../../image/left-first-icon.png') no-repeat 20px 32px;
+  background-size: 20px 20px;
+}
+
+.mxx-icon-nav>li>dl {
+  display: block;
+  width: 100%;
+}
+
+.mxx-icon-nav>li>dl>dd {
+  display: block;
+  width: 100%;
+  height: 46px;
+}
+
+.mxx-icon-nav>li>dl>dd>a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  background-position: 20px 13px;
+}
+
+.mxx-icon-nav>li>dl>dd>a:hover,
+.mxx-icon-nav>li>dl>dd.mxx-active>a {
+  background-color: #212943;
+  background-image: linear-gradient(-90deg, rgba(33,41,67,0.00) 8%, rgba(33,41,67,0.72) 100%, #212943 100%);
+}
+
+.mxx-icon-nav>li>dl>dd a[data-title="频道管理"] {
+  background-image: url('../../image/left-channal-icon.png');
+}
+
+.mxx-icon-nav>li>dl>dd a[data-title="用户管理"] {
+  background-image: url('../../image/left-user-icon.png');
+}
+
+.mxx-icon-nav>li>dl>dd a[data-title="资讯管理"] {
+  background-image: url('../../image/left-info-icon.png');
+}
+
+.mxx-icon-nav>li>dl>dd a[data-title="权限管理"] {
+  background-image: url('../../image/left-resource-icon.png');
+}
+
+.mxx-second-nav * {
+  box-sizing: border-box;
+}
+
+.mxx-second-nav .mxx-nav-title {
+  width: 100%;
+  height: 60px;
+  line-height: 52px;
+  padding: 0 54px 0 17px;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.mxx-second-nav .mxx-nav-title span {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  border-bottom: 1px solid rgba(255,255,255,0.14);;
+  color: #8494A5;
+  line-height: 60px;
+}
+
+.mxx-text-nav {
+  width: 179px;
+  margin-top: 5px;
+}
+
+.mxx-text-nav li {
+  padding: 0 30px 0 19px;
+}
+
+.mxx-text-nav li.mxx-active {
+  background-color: #1E2640;
+}
+
+.mxx-text-nav a {
+  display: inline-block;
+  width: 100%;
+  height: 44px;
+  line-height: 44px;
+  color: #ABB9C7;
+}
+
+.mxx-text-nav dl dd a {
+  height: 37px;
+  line-height: 37px;
+}
+
+.mxx-text-nav a.mxx-active {
+  color: #4DA1FF;
+}
+
+.mxx-text-nav li dd {
+  padding-left: 10px;
+}
+
+.mxx-text-nav li dd span {
+  margin-left: 5px;
+}
+
+
+.mxx-switch-button {
+  width: 14px;
+  height: 38px;
+  background: #EDEDED;
+  border-radius: 5px;
+  position: absolute;
+  top: 240px;
+  left: 231px;
+  cursor: pointer;
+  z-index: 101;
+}
+
+.mxx-body {
+  position: fixed;
+  top: 60px;
+  left: 239px;
+  right: 0;
+  bottom: 0;
+  box-sizing: border-box;
+  padding: 10px;
+  z-index: 102;
+  background-color: #fff;
+}
+
+.mxx-body .layui-tab-content {
+  position: absolute;
+  top: 40px;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  padding: 20px 36px;
+  background-color: #f1f4f5;
+}
+
+.mxx-body .layui-tab-content .layui-tab-item,
+.mxx-body .layui-tab-content .layui-tab-item iframe {
+  width: 100%;
+  height: 100%;
+}
+
+
+.layui-tab-title {
+  border: none;
+}
+
+.layui-tab-title li {
+  color: #ABB9C7;
+  text-align: left;
+}
+
+
+
+.layui-tab-title li.layui-this {
+  color: #30304D;
+  background-color: #f1f4f5;
+}
+
+.layui-tab-title .layui-this:after {
+  border: none;
+}
+
+.layui-tab-title li .layui-tab-close {
+  margin-left: 10px;
+  box-sizing: border-box;
+  border-radius: 50%;
+  font-size: 12px;
+  width: 14px;
+  height: 14px;
+  line-height: 15px;
+}
+
+.layui-tab-title li .layui-tab-close:hover {
+  background-image: linear-gradient(-180deg, rgba(255,120,120,0.61) 0%, rgba(255,79,79,0.60) 100%);
+  border-radius: 50%;
+}
+
+.layui-tab {
+  overflow: hidden;
+  margin: 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.layui-tab .private-tab {
+  position: absolute;
+  left: 42px;
+  /*right: 40px;*/
+  top: 0;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  height: 40px;
+  z-index: 1;
+  margin-left: 0;
+}
+
+.layui-tab .private-tab::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #F5F5F5;
+}
+
+.layui-tab .private-tab::-webkit-scrollbar {
+  width: 6px;
+  height: 0;
+  background-color: #F5F5F5;
+}
+
+.layui-tab .private-tab::-webkit-scrollbar-thumb {
+  background-color: #666666;
+  border-radius: 3px;
+}
+
+.mxx-go-left,
+.mxx-go-right {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 0;
+  cursor: pointer;
+  z-index: 105;
+  text-align: center;
+  background-color: #fff;
+}
+
+.mxx-go-left i, 
+.mxx-go-right i {
+  font-size: 20px;
+  color: #ABB9C7;
+  line-height: 40px;
+
+}
+
+.mxx-go-left {
+  left: 0;
+}
+
+.mxx-go-right {
+  right: 0;
+}
+.tree-div {
+  border: 1px solid #e6e6e6;
+}
+

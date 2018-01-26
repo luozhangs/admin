@@ -1,0 +1,164 @@
+.mxx-table-box {
+	width: 100%;
+}
+
+.mxx-buttonbox {
+	width: 100%;
+	height: 80px;
+}
+
+.mxx-button {
+	padding: 5px;
+	height: 44px;
+	background-color: #E9EFF4;
+	border-radius: 4px;
+	float: right;
+	margin-top: 17px;
+	margin-right: 15px;
+	box-sizing: border-box;
+}
+
+.mxx-button>span {
+	width: 86px;
+	height: 34px;
+	line-height: 34px;
+	display: inline-block;
+	font-size: 13px;
+	text-align: center;
+	position: relative;
+	cursor: pointer;
+	border-radius: 3px;
+	color: #999;
+	box-sizing: border-box;
+	padding-left: 10px;
+	background-repeat: no-repeat;
+	background-size: 13px;
+	background-position: 10px 10px;
+}
+
+.mxx-button>span:hover,
+.mxx-button>span.mxx-active {
+	background-color: #4DA1FF;
+	box-shadow: 0 2px 9px 0 rgba(0, 0, 0, 0.03);
+	color: #fff;
+}
+
+.mxx-button>span.add {
+	background-image: url('../../image/6-2.png');
+}
+
+.mxx-button>span.add:hover {
+	background-image: url('../../image/6-1.png');
+}
+
+
+.mxx-button>span.refresh {
+	background-image: url('../../image/7-2.png');
+}
+
+
+.mxx-button>span.refresh:hover {
+	background-image: url('../../image/7-1.png');
+}
+
+
+
+
+
+.mxx-table .mxx-thead li>span:nth-child(1),
+.mxx-table .mxx-tbody li>span:nth-child(1) {
+	width: 12.33%;
+}
+
+.mxx-table .mxx-thead li>span:nth-child(2),
+.mxx-table .mxx-tbody li>span:nth-child(2) {
+	width: 23.96%;
+}
+
+.mxx-table .mxx-tbody li>span:nth-child(2) {
+	text-align: left;
+}
+
+.mxx-table .mxx-tbody li .mxx-icon-down {
+	display: inline-block;
+	width: 14px;
+	height: 7px;
+	background: url('../../image/9.png') no-repeat;
+	background-size: 14px 7px;
+	margin-left: 10px;
+	cursor: pointer;
+	/*transform: translateY(-1px) rotate(-90deg);*/
+	transition: all .2s;
+}
+
+.mxx-table .mxx-tbody li .mxx-icon-right {
+	display: inline-block;
+	width: 14px;
+	height: 7px;
+	background: url('../../image/9.png') no-repeat;
+	background-size: 14px 7px;
+	margin-left: 10px;
+	cursor: pointer;
+	transform: translateY(-1px) rotate(-90deg);
+	transition: all .2s;
+}
+
+.mxx-table .mxx-tbody li .mxx-icon-qu {
+	display: inline-block;
+	width: 8px;
+	height: 8px;
+	background: url('../../image/10.png') no-repeat;
+	background-size: 8px;
+	display: none;
+}
+
+.mxx-table .mxx-tbody li>span .mxx-text {
+	margin-left: 10px;
+	font-style: normal;
+}
+
+.mxx-table .mxx-thead li>span:nth-child(3),
+.mxx-table .mxx-tbody li>span:nth-child(3) {
+	width: 21.3%;
+}
+
+.mxx-table .mxx-thead li>span:nth-child(4),
+.mxx-table .mxx-tbody li>span:nth-child(4) {
+	width: 9.47%;
+}
+
+.mxx-table .mxx-thead li>span:nth-child(5),
+.mxx-table .mxx-tbody li>span:nth-child(5) {
+	width: 15.38%;
+}
+
+.mxx-table .mxx-thead li>span:last-child,
+.mxx-table .mxx-tbody li>span:last-child {
+	width: 17.5%;
+}
+
+
+.tree-img {
+	height: 58px;
+	margin-left: 11px;
+}
+
+.tree-img_0 {
+	height: 58px;
+	margin-left: 4px;
+}
+
+.tree-img_1 {
+	height: 58px;
+	width: 45px;
+}
+
+.tree-img_10 {
+	width: 9px;
+}
+
+.tree-div {
+	border: 1px solid #e6e6e6;
+	margin-top: 5px;
+	border-radius: 2px;
+}

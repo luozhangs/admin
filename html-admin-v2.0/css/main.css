@@ -1,0 +1,198 @@
+body {
+  width: 100%;
+  height: 100%;
+  font-size: 12px;
+  background-color: #fff;
+}
+
+
+/* 滚动条 */
+
+*::-webkit-scrollbar-track {
+  background-color: #fff;
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 0;
+  background-color: #fff;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #E2E2E2;
+  border-radius: 3px;
+}
+
+.mxx-center {
+  text-align: center;
+}
+
+.mxx-left {
+  text-align: left;
+}
+
+.mxx-right {
+  text-align: right;
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+.hide {
+  display: none;
+}
+
+.clearfix:after {
+  content: "";
+  height: 0;
+  line-height: 0;
+  display: block;
+  clear: both;
+  visibility: hidden;
+}
+
+.clearfix {
+  zoom: 1;
+}
+
+
+/* placeholder颜色 */
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  color: #C5C3C3;
+}
+
+input:-moz-placeholder,
+textarea:-moz-placeholder {
+  color: #C5C3C3;
+}
+
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+  color: #C5C3C3;
+}
+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+  color: #C5C3C3;
+}
+
+
+/* input number箭头 */
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none !important;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+
+/* layui下拉框颜色 */
+
+.layui-form-select dl dd.layui-this {
+  background-color: #F2F2F2;
+  color: #373753;
+}
+
+.layui-form-select .layui-edge {
+  border-radius: 3px;
+  border-top-color: #30304d;
+}
+
+
+/* input,textarea,select背景色 */
+
+.layui-input,
+.layui-textarea,
+.layui-select {
+  background-color: rgba(32, 53, 128, 0.01);
+}
+
+.layui-input:hover,
+.layui-textarea:hover,
+.layui-select:hover,
+input[type="text"]:hover,
+textarea:hover,
+.layui-input:focus,
+.layui-textarea:focus,
+.layui-select:focus,
+input[type="text"]:focus,
+textarea:focus {
+  border-color: #65A9E8 !important;
+}
+
+.layui-quote-nm,
+.layui-elem-field,
+.layui-collapse,
+.layui-colla-item,
+.layui-colla-content,
+.layui-badge-rim,
+.layui-tab-title,
+.layui-tab-title .layui-this:after,
+.layui-tab-bar,
+.layui-tab-card,
+.layui-input,
+.layui-textarea,
+.layui-select,
+.layui-form-pane .layui-form-label,
+.layui-form-pane .layui-form-item[pane],
+.layui-layedit,
+.layui-layedit-tool {
+  border-color: #E9EFF4
+}
+
+
+/* radio样式 */
+
+.layui-form-radio i {
+  font-size: 14px;
+}
+
+.layui-form-radioed i,
+.layui-form-radio i:hover {
+  color: #4DA1FF;
+}
+
+
+/* switch样式 */
+
+.layui-form-onswitch {
+  background-color: #4DA1FF;
+  border-color: #4DA1FF;
+}
+
+
+/* textarea样式 */
+
+.layui-textarea {
+  resize: none;
+}
+
+
+/* 分页样式 */
+
+.mxx-paging {
+  text-align: right;
+  margin: 30px 40px 37px 0;
+}
+
+.layui-laypage input:focus,
+.layui-laypage select:focus {
+  border-color: #65A9E8!important;
+}
+/*loading*/
+.mxx-list-loading{
+  font-size: 80px;
+  color: #1E9FFF;
+  margin-left:45%;
+}

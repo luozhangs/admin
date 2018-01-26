@@ -1,0 +1,359 @@
+/* 管理员权限模块layer部分样式 */
+
+
+/* 添加修改layer */
+
+.mxx-addEdit-layer {
+    width: 90%;
+    height: 90%;
+    box-sizing: border-box;
+    /* margin: 26px 0 40px 30px; */
+}
+
+.mxx-addEdit-layer .layui-form {
+    margin-top: 26px;
+}
+
+
+/* 查看layer */
+
+.mxx-check-layer {
+    width: 100%;
+}
+
+.mxx-check-layer>div {
+    width: 100%;
+    height: 20px;
+    margin-top: 20px;
+}
+
+.mxx-check-layer>div p {
+    float: left;
+}
+
+.mxx-check-layer>div p:nth-child(1) {
+    width: 20%;
+    margin-right: 5%;
+    text-align: right;
+}
+
+.mxx-check-layer>div p:nth-child(2) {
+    width: 70%;
+}
+
+
+
+/*健康讲堂视频上传layer*/
+
+
+.mxx-upload-video {
+    box-sizing: border-box;
+    padding: 30px;
+}
+
+.mxx-upload-video .layui-form-radio i {
+    font-size: 14px;
+}
+
+.mxx-upload-video .mxx-content {
+    margin-top: 20px;
+}
+
+.mxx-upload-video .mxx-content .mxx-local p {
+    float: left;
+}
+
+.mxx-upload-video .mxx-content .mxx-local p:nth-child(1) {
+    position: relative;
+    width: 90px;
+    height: 33px;
+    box-sizing: border-box;
+    line-height: 33px;
+    text-align: center;
+    border: 1px solid #eee;
+    border-radius: 6px;
+}
+
+.mxx-upload-video .mxx-content .mxx-local p:nth-child(1) span {
+    color: #999;
+}
+
+.mxx-upload-video .mxx-content .mxx-local p:nth-child(1) input {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    font-size: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.mxx-upload-video .mxx-content .mxx-local p:nth-child(2) {
+    margin-left: 20px;
+    height: 33px;
+    line-height: 33px;
+    font-size: 12px;
+    color: #ABB9C7;
+    letter-spacing: 0;
+}
+
+.mxx-upload-video .mxx-content .mxx-link {
+    display: none;
+}
+
+.mxx-upload-video .mxx-content .mxx-link p {
+    float: left;
+}
+
+.mxx-upload-video .mxx-content .mxx-link p:nth-child(1) {
+    font-size: 14px;
+    color: #30304D;
+    letter-spacing: 0.9px;
+    height: 40px;
+    line-height: 40px;
+}
+
+.mxx-upload-video .mxx-content .mxx-link p:nth-child(2) input {
+    width: 300px;
+    height: 40px;
+    box-sizing: border-box;
+    padding: 0 10px;
+    outline: none;
+    margin-left: 10px;
+    border: 1px solid #E4EAEC;
+}
+
+
+
+
+
+/* 文章图片上传layer */
+
+.mxx-layer {
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+.mxx-layer .mxx-layer-text {
+    box-sizing: border-box;
+    padding: 0 10px;
+    line-height: 30px;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed rgba(48, 48, 77, 0.20);
+}
+
+.mxx-layer .mxx-layer-text span:nth-child(1) {
+    font-size: 14px;
+    color: #30304D;
+    letter-spacing: 0.9px;
+    float: left;
+}
+
+.mxx-layer .mxx-layer-text span:nth-child(2) {
+    font-size: 12px;
+    color: #ABB9C7;
+    letter-spacing: 0.77px;
+    float: left;
+    margin-left: 10px;
+}
+
+.mxx-layer .mxx-layer-text span:nth-child(3) {
+    float: right;
+    background-image: linear-gradient(0deg, #4DA1FF 0%, #78B8FF 100%);
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.10);
+    border-radius: 2px;
+    width: 90px;
+    height: 30px;
+    color: #fff;
+    line-height: 30px;
+    text-align: center;
+    position: relative;
+}
+
+.mxx-layer .mxx-layer-text span:nth-child(3) input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    font-size: 0;
+}
+
+.mxx-layer .mxx-layer-picarea {
+    width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+.mxx-layer .mxx-layer-picarea p {
+    width: 100%;
+    font-size: 12px;
+    color: #ABB9C7;
+    letter-spacing: 0.64px;
+    margin-top: 10px;
+    text-align: right;
+}
+
+.mxx-layer .mxx-layer-picarea ul {
+    width: 100%;
+}
+
+.mxx-layer .mxx-layer-picarea ul li {
+    width: 20%;
+    text-align: center;
+    height: 67px;
+    float: left;
+    margin: 2.5%;
+}
+
+.mxx-layer .mxx-layer-picarea ul li>div {
+    width: 120px;
+    height: 67px;
+    box-sizing: border-box;
+    border: 1px solid #E4EAEC;
+    cursor: pointer;
+    position: relative;
+}
+
+.mxx-layer .mxx-layer-picarea ul li>div>div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, .3);
+}
+
+.mxx-layer .mxx-layer-picarea ul li>div>div i {
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: url('../../image/green_right.png') no-repeat 0 0;
+    background-size: 100%;
+}
+
+.mxx-layer .mxx-layer-picarea ul li>div img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* 剪切图片layer */
+
+.mxx-cut {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.mxx-target-box {
+    display: block;
+    position: absolute;
+    z-index: 2000;
+    top: 20px;
+    right: 35px;
+    padding: 6px;
+    border: 1px rgba(0, 0, 0, .4) solid;
+    background-color: white;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    -webkit-box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.2);
+}
+
+#target {
+    visibility: hidden;
+}
+
+.mxx-cut p {
+    position: absolute;
+    top: 150px;
+    right: 95px;
+    z-index: 2000;
+    color: #ABB9C7;
+}
+
+
+.mxx-upload-banner {
+    box-sizing: border-box;
+    padding: 13px;
+  }
+  
+  .mxx-upload-banner ul li {
+    float: left;
+    width: 120px;
+    height: 64px;
+    margin: 13px;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  .mxx-upload-banner ul li img {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .mxx-upload-banner .mxx-layer-buttons {
+    margin-top: 20px;
+    text-align: right;
+  }
+  
+  .mxx-upload-banner .mxx-layer-buttons span {
+    display: inline-block;
+    width: 86px;
+    height: 34px;
+    line-height: 34px;
+    text-align: center;
+    background-color: #fff;
+    border: 1px solid rgba(48,48,77,0.10);
+    border-radius: 3px;
+    font-size: 13px;
+    color: #323C47;
+    cursor: pointer;
+    margin: 0 5px;
+  }
+  
+  .mxx-upload-banner .mxx-layer-buttons span.mxx-dis {
+    color: #C5C3C3;
+    /*pointer-events:none;*/
+    cursor: not-allowed;
+  }
+  
+  .mxx-upload-banner ul li b {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.3);
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: all .3s;
+    -moz-transition: all .3s;
+    -webkit-transition: all .3s;
+    -o-transition: all .3s;
+  }
+  
+  .mxx-upload-banner ul li b i {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 14px;
+    height: 14px;
+    background: url('../../image/green_right.png') no-repeat 0 0;
+    background-size: 14px;
+  }
+  
+  .mxx-upload-banner ul li.mxx-active b {
+    opacity: 1;
+  }

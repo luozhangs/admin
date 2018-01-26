@@ -1,0 +1,222 @@
+.mxx-box {
+  width: 100%;
+}
+
+.mxx-box .mxx-form-box {
+  width: 100%;
+  height: 80px;
+  position: relative;
+}
+
+.mxx-box .mxx-form-box .mxx-category {
+  width: 90px;
+  height: 34px;
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  background: rgba(32, 53, 128, 0.01);
+  border: 1px solid #E9EFF4;
+  border-radius: 3px;
+  cursor: pointer;
+  line-height: 34px;
+  text-align: center;
+}
+
+.mxx-box .mxx-form-box .mxx-tree-box {
+  width: 258px;
+  height: 436px;
+  background-color: #fff;
+  position: absolute;
+  top: 65px;
+  left: 30px;
+  box-shadow: 0 0 24px 0 rgba(68, 68, 68, 0.50);
+  border-radius: 4px;
+  display: none;
+  text-align: center;
+  z-index: 1;
+}
+
+.mxx-box .mxx-form-box .mxx-tree-box .mxx-tree {
+  width: 210px;
+  height: 330px;
+  border: 1px solid #ececec;
+  margin: 5px auto 0;
+}
+
+.mxx-box .mxx-form-box .mxx-tree-box>p {
+  display: inline-block;
+  width: 64px;
+  height: 76px;
+  margin-top: 10px;
+  background-repeat: no-repeat;
+  background-size: 24px;
+  background-color: #F4F8F9;
+  background-position: 21px 17px;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.mxx-box .mxx-form-box .mxx-tree-box>p+p {
+  margin-left: 15px;
+}
+
+.mxx-box .mxx-form-box .mxx-tree-box>p span {
+  display: block;
+  width: 80%;
+  margin: 45px auto 0;
+  color: #30304D;
+  font-size: 12px;
+}
+
+.mxx-box .mxx-form-box .mxx-tree-box>p:nth-child(2) {
+  background-image: url('../../image/add-button.png');
+}
+
+.mxx-box .mxx-form-box .mxx-tree-box>p:nth-child(3) {
+  background-image: url('../../image/change-button.png');
+}
+
+.mxx-box .mxx-form-box .mxx-tree-box>p:nth-child(4) {
+  background-image: url('../../image/del-button.png');
+}
+
+.mxx-box .mxx-form-box .mxx-add-new {
+  width: 86px;
+  height: 34px;
+  font-size: 12px;
+  color: #fff;
+  padding-left: 10px;
+  box-sizing: border-box;
+  border-radius: 3px;
+  cursor: pointer;
+  line-height: 34px;
+  text-align: center;
+  position: absolute;
+  right: 30px;
+  top: 23px;
+  background-color: #4DA1FF;
+  background-image: url('../../image/6-1.png');
+  background-repeat: no-repeat;
+  background-size: 13px;
+  background-position: 10px 10px;
+}
+
+
+/* .mxx-box .mxx-form-box .mxx-add-new:hover {
+  background-image: url('../../image/6.png');
+} */
+
+.mxx-box .mxx-form-box .mxx-form {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 150px;
+  right: 146px;
+}
+
+.mxx-box .mxx-form-box .mxx-form form {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  right: 0;
+  bottom: 20px;
+}
+
+.mxx-box .mxx-form-box .mxx-form form .layui-form-item,
+.mxx-box .mxx-form-box .mxx-form form .layui-form-item .layui-inline {
+  width: 100%;
+}
+
+.layui-form-item .layui-inline {
+  margin: 0;
+}
+
+.mxx-box .mxx-form-box .mxx-form .mxx-form-input {
+  width: 60%;
+  padding-left: 40px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.mxx-box .mxx-form-box .mxx-form .layui-form-label {
+  text-align: left;
+  width: 24px;
+}
+
+.mxx-box .mxx-form-box .mxx-form .mxx-form-select {
+  width: 90px;
+}
+
+.mxx-box .mxx-form-box .mxx-form .mxx-form-select .layui-input,
+.layui-textarea,
+.layui-select {
+  height: 34px;
+}
+
+.mxx-box .mxx-form-box .mxx-form .mxx-form-input i {
+  display: inline-block;
+  width: 17px;
+  height: 17px;
+  background: url('../../image/3-1.png') no-repeat;
+  background-size: 17px;
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  cursor: pointer;
+}
+
+.mxx-box .mxx-form-box .mxx-form .mxx-form-input input {
+  border: none;
+  background-color: transparent;
+  border-bottom: 1px solid #ececec;
+  font-size: 12px;
+}
+
+.mxx-thead li>span:nth-child(1),
+.mxx-tbody li>span:nth-child(1) {
+  width: 8%;
+}
+
+.mxx-thead li>span:nth-child(2),
+.mxx-tbody li>span:nth-child(2) {
+  width: 8%;
+}
+
+.mxx-thead li>span:nth-child(3),
+.mxx-tbody li>span:nth-child(3) {
+  width: 8%;
+}
+
+.mxx-thead li>span:nth-child(4),
+.mxx-tbody li>span:nth-child(4) {
+  width: 12%;
+}
+
+.mxx-thead li>span:nth-child(5),
+.mxx-tbody li>span:nth-child(5) {
+  width: 19%;
+}
+
+.mxx-thead li>span:nth-child(6),
+.mxx-tbody li>span:nth-child(6) {
+  width: 5.5%;
+}
+
+.mxx-thead li>span:nth-child(7),
+.mxx-tbody li>span:nth-child(7) {
+  width: 9%;
+}
+
+.mxx-thead li>span:nth-child(8),
+.mxx-tbody li>span:nth-child(8) {
+  width: 9%;
+}
+
+.mxx-thead li>span:last-child,
+.mxx-tbody li>span:last-child {
+  width: 20%;
+}
+
+.mxx-paging {
+  text-align: right;
+}
